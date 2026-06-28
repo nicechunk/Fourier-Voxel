@@ -1,0 +1,38 @@
+{
+  "name": "nicechunk",
+  "version": "0.1.63",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "audit:deps": "node scripts/audit-dependencies.mjs",
+    "audit:fourier-pickaxe-docs": "node scripts/audit-fourier-pickaxe-docs.mjs",
+    "build": "vite build",
+    "build:nginx": "vite build",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
+    "validate:release": "npm run audit:deps && npm run audit:fourier-pickaxe-docs && npm run build"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.14",
+    "bs58": "^4.0.1",
+    "three": "^0.165.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.9.3",
+    "mocha": "^11.7.6",
+    "playwright": "^1.60.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0"
+  },
+  "overrides": {
+    "mocha": {
+      "diff": "^9.0.0",
+      "serialize-javascript": "^7.0.6"
+    }
+  }
+}
