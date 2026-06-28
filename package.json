@@ -7,11 +7,12 @@
   "scripts": {
     "audit:deps": "node scripts/audit-dependencies.mjs",
     "audit:fourier-pickaxe-docs": "node scripts/audit-fourier-pickaxe-docs.mjs",
+    "audit:licenses": "node scripts/audit-licenses.mjs",
     "build": "vite build",
     "build:nginx": "vite build",
     "dev": "vite --host 0.0.0.0",
     "preview": "vite preview --host 0.0.0.0",
-    "validate:release": "npm run audit:deps && npm run audit:fourier-pickaxe-docs && npm run build"
+    "validate:release": "npm run audit:deps && npm run audit:licenses && npm run audit:fourier-pickaxe-docs && npm run build"
   },
   "dependencies": {
     "@solana/spl-token": "^0.4.14",
