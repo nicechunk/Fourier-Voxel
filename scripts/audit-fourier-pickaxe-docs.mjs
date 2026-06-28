@@ -18,10 +18,13 @@ const requiredPhrases = {
     "GPU-oriented",
     "local `.vox` file parsing",
     "G0 global palette",
+    "Documentation-Only Showcase",
     "Apache-2.0",
   ],
   "docs/fourier-pickaxe-showcase.md": [
     "Documentation-First Review Path",
+    "Documentation-Only Showcase",
+    "Non-GPU Evidence Checklist",
     "Function Payload",
     "GPU Runtime Expectations",
     "Security Boundary",
