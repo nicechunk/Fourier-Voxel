@@ -6,6 +6,7 @@ const root = path.resolve(import.meta.dirname, "..");
 const requiredFiles = [
   "fourier-pickaxe/README.md",
   "docs/fourier-pickaxe-showcase.md",
+  "docs/fourier-pickaxe-static-display.md",
   "fourier-pickaxe/index.html",
   "fourier-pickaxe/main.js",
   "fourier-pickaxe/styles.css",
@@ -40,6 +41,17 @@ const requiredPhrases = {
     "GPU Runtime Expectations",
     "Security Boundary",
     "Known Limits",
+  ],
+  "docs/fourier-pickaxe-static-display.md": [
+    "Display Positioning",
+    "Static Review Card",
+    "Reviewer Walkthrough",
+    "Allowed Claims Without GPU",
+    "Disallowed Claims Without GPU",
+    "GPU Evidence To Add Later",
+    "Security Notes",
+    "Runtime screenshots, visual fidelity, proof-search responsiveness, and benchmark claims are deferred",
+    "No upload endpoint, wallet signature, server address, GitHub token, private key, or deploy script",
   ],
   "fourier-pickaxe/index.html": [
     "sourceScene",
