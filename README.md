@@ -2,6 +2,12 @@
 
 Independent GPU-oriented voxel function program and documentation-first showcase.
 
+## Official Links
+
+GitHub: [https://github.com/nicechunk/Fourier-Voxel](https://github.com/nicechunk/Fourier-Voxel)
+
+Website: [https://nicechunk.com/fourier-voxel/](https://nicechunk.com/fourier-voxel/)
+
 ## Project Overview
 
 This repository contains Fourier Voxel, the independent NiceChunk GPU-oriented browser program for compact voxel asset functions. It loads local MagicaVoxel files, maps colors into the shared G0 palette, merges voxels into deterministic basis functions, and redraws the model from compact function bytes.
