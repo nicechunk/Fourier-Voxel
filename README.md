@@ -1,7 +1,5 @@
 # NiceChunk Fourier Pickaxe
 
-![NiceChunk Fourier Pickaxe overview](docs/screenshots/overview.png)
-
 GPU-oriented voxel function research surface and documentation-first showcase.
 
 ## Project Overview
@@ -21,10 +19,10 @@ The repository is split from the main web client because voxel function research
 
 ## How It Works
 
-- Open the Fourier Pickaxe page in a WebGL-capable browser with GPU acceleration enabled.
-- Load a local .vox file, compute the function payload, and compare the source model against the function redraw.
-- Use the proof-search preview as an exploratory model, not as production mining evidence.
 - In CPU-only review environments, run the documentation audit and read the showcase document instead of claiming runtime validation.
+- Inspect the page structure, local .vox input boundary, codec path, and proof-search preview source from the documented files.
+- Use the display packet as the public demonstration material until GPU hardware is available.
+- On a GPU workstation later, load a local .vox file, compute the function payload, and compare the source model against the function redraw.
 
 ## Why This Project Matters
 
@@ -45,7 +43,7 @@ A focused repository keeps this research auditable. External reviewers can verif
 1. Clone the repository and inspect the focused source tree before changing shared contracts or generated artifacts.
 2. Keep changes scoped to the domain of this repository. Cross-domain changes should be coordinated through the matching split repositories.
 3. Run the smallest meaningful validation for the touched surface: build checks for programs, browser checks for pages, or fixture checks for deterministic libraries.
-4. Update screenshots and documentation when behavior, visible UI, public constants, or developer-facing workflows change.
+4. Update documentation and evidence when behavior, visible UI, public constants, or developer-facing workflows change. Only add screenshots when they were produced from the required runtime environment.
 
 ## Future Development Direction
 
