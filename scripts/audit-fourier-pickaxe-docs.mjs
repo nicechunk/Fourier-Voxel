@@ -4,15 +4,22 @@ import path from "node:path";
 const root = path.resolve(import.meta.dirname, "..");
 
 const requiredFiles = [
-  "fourier-pickaxe/README.md",
+  "fourier-voxel/README.md",
+  "fourier-voxel/index.html",
+  "fourier-voxel/main.js",
+  "fourier-voxel/styles.css",
   "docs/fourier-pickaxe-showcase.md",
   "docs/fourier-pickaxe-static-display.md",
   "docs/fourier-pickaxe-display-packet.md",
+  "src/vox/ncm.js",
+  "src/i18n.js",
+];
+
+const optionalCompatibilityFiles = [
+  "fourier-pickaxe/README.md",
   "fourier-pickaxe/index.html",
   "fourier-pickaxe/main.js",
   "fourier-pickaxe/styles.css",
-  "src/vox/ncm.js",
-  "src/i18n.js",
 ];
 
 const requiredPhrases = {
@@ -32,6 +39,16 @@ const requiredPhrases = {
     "Static Display Summary",
     "docs/fourier-pickaxe-display-packet.md",
     "No private server address",
+    "Apache-2.0",
+  ],
+  "fourier-voxel/README.md": [
+    "Fourier Voxel",
+    "independent NiceChunk GPU-oriented browser program",
+    "Independent Program Boundary",
+    "nicechunk/Fourier-Voxel",
+    "fourier-voxel/main.js",
+    "powerPreference: \"high-performance\"",
+    "Documentation Packet",
     "Apache-2.0",
   ],
   "docs/fourier-pickaxe-showcase.md": [
@@ -93,6 +110,25 @@ const requiredPhrases = {
     "mergeSameColorVoxels",
     "createPowCandidate",
   ],
+  "fourier-voxel/index.html": [
+    "sourceScene",
+    "functionScene",
+    "powScene",
+    "voxFile",
+    "Documentation-only review",
+    "Deferred evidence",
+    "No runtime claim",
+  ],
+  "fourier-voxel/main.js": [
+    "parseVox",
+    "WebGLRenderer",
+    "powerPreference: \"high-performance\"",
+    "InstancedMesh",
+    "requestAnimationFrame",
+    "createFunctionPayload",
+    "mergeSameColorVoxels",
+    "createPowCandidate",
+  ],
 };
 
 const findings = [];
@@ -109,11 +145,23 @@ for (const file of requiredFiles) {
   }
 }
 
+for (const file of optionalCompatibilityFiles) {
+  const abs = path.join(root, file);
+  if (!fs.existsSync(abs)) continue;
+  const content = fs.readFileSync(abs, "utf8");
+  for (const phrase of requiredPhrases[file] ?? []) {
+    if (!content.includes(phrase)) findings.push(`${file}: missing phrase "${phrase}"`);
+  }
+}
+
 const report = {
   schemaVersion: 1,
   generatedAt: new Date().toISOString(),
   surface: "fourier-pickaxe",
-  checkedFiles: requiredFiles,
+  checkedFiles: [
+    ...requiredFiles,
+    ...optionalCompatibilityFiles.filter((file) => fs.existsSync(path.join(root, file))),
+  ],
   findings,
   ok: findings.length === 0,
 };

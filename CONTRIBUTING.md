@@ -1,6 +1,6 @@
 # Contributing to nicechunk-fourier-pickaxe
 
-NiceChunk Fourier Pickaxe GPU-oriented voxel function research surface.
+NiceChunk Fourier Voxel independent GPU-oriented voxel function program.
 
 This repository is generated from the main NiceChunk working tree. Make code changes in the main tree, run the relevant validation, then regenerate the split repository with:
 

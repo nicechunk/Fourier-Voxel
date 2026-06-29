@@ -16,7 +16,7 @@ This repository is generated from the main NiceChunk working tree. Make source c
 
 ### Split Scope
 
-NiceChunk Fourier Pickaxe GPU-oriented voxel function research surface.
+NiceChunk Fourier Voxel independent GPU-oriented voxel function program.
 
 ### Current Status
 
