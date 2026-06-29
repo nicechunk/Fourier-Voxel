@@ -20,7 +20,7 @@ The repository is split from the main web client because voxel function research
 ## How It Works
 
 - In CPU-only review environments, run the documentation audit and read the showcase document instead of claiming runtime validation.
-- Inspect the page structure, local .vox input boundary, codec path, and proof-search preview source from the documented files.
+- Inspect the page structure, local .vox input boundary, WebGL viewer setup, codec path, and proof-search preview source from the documented files.
 - Use the display packet as the public demonstration material until GPU hardware is available.
 - On a GPU workstation later, load a local .vox file, compute the function payload, and compare the source model against the function redraw.
 
@@ -32,11 +32,29 @@ A focused repository keeps this research auditable. External reviewers can verif
 
 ## Repository Layout
 
-- `fourier-pickaxe/`
+- `fourier-pickaxe/index.html`
+- `fourier-pickaxe/main.js`
+- `fourier-pickaxe/styles.css`
 - `src/vox/ncm.js`
 - `src/i18n.js`
 - `docs/fourier-pickaxe-showcase.md`
+- `docs/fourier-pickaxe-static-display.md`
+- `docs/fourier-pickaxe-display-packet.md`
 - `scripts/audit-fourier-pickaxe-docs.mjs`
+
+## GPU/WebGL Code Entrypoints
+
+- `fourier-pickaxe/main.js` is the primary GPU-facing source file. It creates three Three.js WebGL renderers with `powerPreference: "high-performance"`, builds instanced voxel meshes, runs the animation loop, and updates the source, function redraw, and proof candidate scenes.
+- `fourier-pickaxe/index.html` defines the local `.vox` input, compute controls, proof-search controls, metrics, and the three canvas panes used by the GPU/WebGL review path.
+- `fourier-pickaxe/styles.css` keeps the lab layout usable for side-by-side model inspection and documentation-only review.
+- `src/vox/ncm.js` is the shared parser boundary for MagicaVoxel/NCM data. The browser page imports it directly instead of hiding voxel parsing in generated artifacts.
+
+## Documentation Packet
+
+- `fourier-pickaxe/README.md` documents the source-level workflow, GPU requirement, local-only file boundary, payload data flow, and security notes.
+- `docs/fourier-pickaxe-showcase.md` is the full external-review narrative, including the GPU validation plan and non-GPU evidence checklist.
+- `docs/fourier-pickaxe-static-display.md` is the approved CPU-only presentation packet for environments that cannot run WebGL meaningfully.
+- `docs/fourier-pickaxe-display-packet.md` is the short display-ready handoff for agents, reviewers, or public repository summaries.
 
 ## Development Workflow
 
